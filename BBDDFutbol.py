@@ -358,16 +358,6 @@ menu='''\n
 *  g) Salir                *
 '''
 
-menuTablas='''\n
-            TABLAS
-
-*  1) Liga                 *
-*  2) Equipos              *
-*  3) Jugadores            *
-*  4) Trofeos              *
-*  5) Patrocinadores       *
-'''
-
 menuTabla='''\n
         MENU TABLA
 
@@ -391,7 +381,6 @@ def main():
         ###Ver tablas
         if opcion == 'A':
             print("\nMenu tablas")
-            print(menuTablas)
 
         ###Consultar tablas
         elif opcion == 'B':
@@ -676,7 +665,6 @@ def main():
         ###Borrar tabla
         elif opcion == 'F':
             print("\n¿Que tabla quieres borrar?")
-            print(menuTablas)
             subopcionBorrar = input("\n¿Que tabla deseas borar?").upper()
             tabla = input("\nEscribe el nombre de la tabla:")
             r = elimina_Tabla(tabla)
