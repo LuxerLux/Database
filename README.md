@@ -4,6 +4,11 @@ Se ha realizado el ejercicio de subida de un repositorio a github y la posterior
 El repositorio es la API de una base de datos de fútbol profesional
 
 ---
+
+Trabajo académico [^1]
+
+---
+
 ## Base de datos de fútbol
 
 La base de datos tendrá la siguiente información:
@@ -19,6 +24,7 @@ La base de datos tendrá la siguiente información:
 ![BBDD_Futbol MER](https://user-images.githubusercontent.com/114089760/207039841-0b5c7b4b-5825-41f2-9499-b8a7aac19a5e.jpg)
 
 ---
+
 ## API :computer:
 
 Esta API permite:
@@ -33,5 +39,5 @@ Esta API permite:
 - [ ] Borrar usuarios
 - [ ] Modificar usuarios
  
-Empresa [^1]
-[^1]: Desarrollado para uso escolar en el ***CEV***.
+
+[^1]: Desarrollado para uso escolar en el ***CEV***
