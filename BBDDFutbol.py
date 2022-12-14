@@ -12,15 +12,15 @@ futbol = mydb.cursor()
 
 #############    Se crean las tablas         ###########
 
-futbol.execute("CREATE TABLE Liga (Id_Liga_li INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Nombre_li VARCHAR(50) NOT NULL, País_li VARCHAR(50) NOT NULL, N_Edición_li INT(4) NOT NULL, N_Jornada_li INT(2) NOT NULL)")
+# # futbol.execute("CREATE TABLE Liga (Id_Liga_li INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Nombre_li VARCHAR(50) NOT NULL, País_li VARCHAR(50) NOT NULL, N_Edición_li INT(4) NOT NULL, N_Jornada_li INT(2) NOT NULL)")
 
-futbol.execute("CREATE TABLE Equipos (Id_Equipos_eq INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_eq INT NOT NULL, Nombre_eq VARCHAR(50) NOT NULL, PJ_eq INT(7) NOT NULL, Victorias_eq INT(5) NOT NULL, Derrotas_eq INT(5) NOT NULL, Empates_eq INT(5) NOT NULL, GF_eq INT(5) NOT NULL, GC_eq INT(5) NOT NULL, Puntos_eq INT(7) NOT NULL, FOREIGN KEY (Id_Liga_eq) REFERENCES Liga(Id_Liga_li))")
+# # futbol.execute("CREATE TABLE Equipos (Id_Equipos_eq INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_eq INT NOT NULL, Nombre_eq VARCHAR(50) NOT NULL, PJ_eq INT(7) NOT NULL, Victorias_eq INT(5) NOT NULL, Derrotas_eq INT(5) NOT NULL, Empates_eq INT(5) NOT NULL, GF_eq INT(5) NOT NULL, GC_eq INT(5) NOT NULL, Puntos_eq INT(7) NOT NULL, FOREIGN KEY (Id_Liga_eq) REFERENCES Liga(Id_Liga_li))")
 
-futbol.execute("CREATE TABLE Jugadores (Id_Jugadores_ju INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_ju INT NOT NULL, Id_Equipos_ju INT NOT NULL, Nombre_ju VARCHAR(50) NOT NULL, PJ_ju INT(5) NOT NULL, Goles_ju INT(4) NOT NULL, Asistencias_ju INT(4) NOT NULL, Rojas_ju INT(3) NOT NULL, Amarillas_ju INT(3) NOT NULL, FOREIGN KEY (Id_Liga_ju) REFERENCES Liga(Id_Liga_li), FOREIGN KEY (Id_Equipos_ju) REFERENCES Equipos(Id_Equipos_eq))")
+# # futbol.execute("CREATE TABLE Jugadores (Id_Jugadores_ju INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_ju INT NOT NULL, Id_Equipos_ju INT NOT NULL, Nombre_ju VARCHAR(50) NOT NULL, PJ_ju INT(5) NOT NULL, Goles_ju INT(4) NOT NULL, Asistencias_ju INT(4) NOT NULL, Rojas_ju INT(3) NOT NULL, Amarillas_ju INT(3) NOT NULL, FOREIGN KEY (Id_Liga_ju) REFERENCES Liga(Id_Liga_li), FOREIGN KEY (Id_Equipos_ju) REFERENCES Equipos(Id_Equipos_eq))")
 
-futbol.execute("CREATE TABLE Trofeos (Id_Trofeos_tr INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_tr INT NOT NULL, Nombre_tr VARCHAR(50) NOT NULL, Tipo_tr VARCHAR(50) NOT NULL, Fecha_Inicio_tr YEAR NULL, Fecha_Final_tr YEAR NULL, G_Anterior_tr VARCHAR(50) NULL, FOREIGN KEY (Id_Equipos_tr) REFERENCES Equipos(Id_Equipos_eq))")
+# # futbol.execute("CREATE TABLE Trofeos (Id_Trofeos_tr INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_tr INT NOT NULL, Nombre_tr VARCHAR(50) NOT NULL, Tipo_tr VARCHAR(50) NOT NULL, Fecha_Inicio_tr YEAR NULL, Fecha_Final_tr YEAR NULL, G_Anterior_tr VARCHAR(50) NULL, FOREIGN KEY (Id_Equipos_tr) REFERENCES Equipos(Id_Equipos_eq))")
 
-futbol.execute("CREATE TABLE Patrocinadores (Id_Patrocinadores_pa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_pa INT NOT NULL, Nombre_pa VARCHAR(50) NOT NULL, Fecha_Inicio_pa YEAR NULL, Fecha_Final_pa YEAR NULL, Dinero_Anual_pa INT(15) NOT NULL, FOREIGN KEY (Id_Equipos_pa) REFERENCES Equipos(Id_Equipos_eq))")
+# # futbol.execute("CREATE TABLE Patrocinadores (Id_Patrocinadores_pa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_pa INT NOT NULL, Nombre_pa VARCHAR(50) NOT NULL, Fecha_Inicio_pa YEAR NULL, Fecha_Final_pa YEAR NULL, Dinero_Anual_pa INT(15) NOT NULL, FOREIGN KEY (Id_Equipos_pa) REFERENCES Equipos(Id_Equipos_eq))")
 
 
 
