@@ -28,7 +28,7 @@ La base de datos tendrá la siguiente información:
 
 ---
 
-## API :computer: {#BBDD}
+## API :computer: {#API}
 
 Esta API permite:
 
