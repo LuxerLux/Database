@@ -7,12 +7,12 @@ El repositorio es la API de una base de datos de fútbol profesional
 
 Trabajo académico [^1] :
 
-1. #id-BBDD
-2. #id-API
+1. [BBDD de futbol](#BBDD)
+2. [API de la base de datos](#API)
 
 ---
 
-## Base de datos de fútbol {#id-BBDD}
+## Base de datos de fútbol {#iBBDD}
 
 La base de datos tendrá la siguiente información:
 
@@ -28,7 +28,7 @@ La base de datos tendrá la siguiente información:
 
 ---
 
-## API :computer: {#id-API}
+## API :computer: {#API}
 
 Esta API permite:
 
