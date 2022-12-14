@@ -26,62 +26,62 @@ futbol = mydb.cursor()
 
 ###########    Se insertan los valores       ################
 
-insertLiga = "INSERT INTO Liga (Id_Liga_li, Nombre_li, País_li, N_Edición_li, N_Jornada_li) VALUES (NULL, %s, %s, %s, %s)" ###En VALUES el id primary key se pone null para que sea autoincrement
-valoresLiga = [
-  ('LaLiga', 'España', '92', '14'),
-  ('Premier League', 'Reino Unido', '124', '16'),
-  ('Bundesliga', 'Alemania', '59', '15')
-]
-futbol.executemany(insertLiga, valoresLiga)
-mydb.commit()
+# insertLiga = "INSERT INTO Liga (Id_Liga_li, Nombre_li, País_li, N_Edición_li, N_Jornada_li) VALUES (NULL, %s, %s, %s, %s)" ###En VALUES el id primary key se pone null para que sea autoincrement
+# valoresLiga = [
+#   ('LaLiga', 'España', '92', '14'),
+#   ('Premier League', 'Reino Unido', '124', '16'),
+#   ('Bundesliga', 'Alemania', '59', '15')
+# ]
+# futbol.executemany(insertLiga, valoresLiga)
+# mydb.commit()
 
 
-insertEquipos = "INSERT INTO Equipos (Id_Equipos_eq, Id_Liga_eq, Nombre_eq, PJ_eq, Victorias_eq, Derrotas_eq, Empates_eq, GF_eq, GC_eq, Puntos_eq) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-valoresEquipos = [
-  ('1', 'Real Madrid CF', '14', '11', '1', '2', '33', '14', '35'),
-  ('1', 'FC.Barcelona', '14', '12', '1', '1', '33', '5', '37'),
-  ('2', 'Manchester City FC', '14', '10', '2', '2', '40', '14', '32'),
-  ('3', 'Bayern Munich', '15', '10', '1', '4', '49', '13', '34'),
-  ('3', 'Eintracht Fráncfort', '15', '8', '4', '3', '32', '24', '27')
-]
-futbol.executemany(insertEquipos, valoresEquipos)
-mydb.commit()
+# insertEquipos = "INSERT INTO Equipos (Id_Equipos_eq, Id_Liga_eq, Nombre_eq, PJ_eq, Victorias_eq, Derrotas_eq, Empates_eq, GF_eq, GC_eq, Puntos_eq) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+# valoresEquipos = [
+#   ('1', 'Real Madrid CF', '14', '11', '1', '2', '33', '14', '35'),
+#   ('1', 'FC.Barcelona', '14', '12', '1', '1', '33', '5', '37'),
+#   ('2', 'Manchester City FC', '14', '10', '2', '2', '40', '14', '32'),
+#   ('3', 'Bayern Munich', '15', '10', '1', '4', '49', '13', '34'),
+#   ('3', 'Eintracht Fráncfort', '15', '8', '4', '3', '32', '24', '27')
+# ]
+# futbol.executemany(insertEquipos, valoresEquipos)
+# mydb.commit()
 
 
-insertJugadores = "INSERT INTO Jugadores (Id_Jugadores_ju, Id_Liga_ju, Id_Equipos_ju, Nombre_ju, PJ_ju, Goles_ju, Asistencias_ju, Rojas_ju, Amarillas_ju) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)"
-valoresJugadores = [
-  ('1', '1', 'Karim Benzema', '7', '5', '1', '0', '0'),
-  ('1', '2', 'Pedro González (Pedri)', '14', '3', '0', '0', '0'),
-  ('2', '3', 'Erling Haaland', '13', '18', '3', '0', '2'),
-  ('3', '4', 'Christopher Nkunku', '15', '12', '2', '0', '1'),
-  ('3', '5', 'Mario Gotze', '15', '2', '1', '0', '0')
-]
-futbol.executemany(insertJugadores, valoresJugadores)
-mydb.commit()
+# insertJugadores = "INSERT INTO Jugadores (Id_Jugadores_ju, Id_Liga_ju, Id_Equipos_ju, Nombre_ju, PJ_ju, Goles_ju, Asistencias_ju, Rojas_ju, Amarillas_ju) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)"
+# valoresJugadores = [
+#   ('1', '1', 'Karim Benzema', '7', '5', '1', '0', '0'),
+#   ('1', '2', 'Pedro González (Pedri)', '14', '3', '0', '0', '0'),
+#   ('2', '3', 'Erling Haaland', '13', '18', '3', '0', '2'),
+#   ('3', '4', 'Christopher Nkunku', '15', '12', '2', '0', '1'),
+#   ('3', '5', 'Mario Gotze', '15', '2', '1', '0', '0')
+# ]
+# futbol.executemany(insertJugadores, valoresJugadores)
+# mydb.commit()
 
 
-insertTrofeos = "INSERT INTO Trofeos (Id_Trofeos_tr, Id_Equipos_tr, Nombre_tr, Tipo_tr, Fecha_Inicio_tr, Fecha_Final_tr, G_Anterior_tr) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
-valoresTrofeos = [
-  ('1', 'Champions League', 'Internacional', '2021', '2022', 'Chelsea'),
-  ('5', 'Europa League', 'Internacional', '2021', '2022', 'Villareal'),
-  ('1', 'Copa LaLiga', 'Nacional', '2021', '2022', 'Atlético de Madrid'),
-  ('3', 'Copa Premier League', 'Nacional', '2021', '2022', 'Manchester City'),
-  ('4', 'Copa Bundesliga', 'Nacional', '2021', '2022', 'Bayern Múnich')
-]
-futbol.executemany(insertTrofeos, valoresTrofeos)
-mydb.commit()
+# insertTrofeos = "INSERT INTO Trofeos (Id_Trofeos_tr, Id_Equipos_tr, Nombre_tr, Tipo_tr, Fecha_Inicio_tr, Fecha_Final_tr, G_Anterior_tr) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
+# valoresTrofeos = [
+#   ('1', 'Champions League', 'Internacional', '2021', '2022', 'Chelsea'),
+#   ('5', 'Europa League', 'Internacional', '2021', '2022', 'Villareal'),
+#   ('1', 'Copa LaLiga', 'Nacional', '2021', '2022', 'Atlético de Madrid'),
+#   ('3', 'Copa Premier League', 'Nacional', '2021', '2022', 'Manchester City'),
+#   ('4', 'Copa Bundesliga', 'Nacional', '2021', '2022', 'Bayern Múnich')
+# ]
+# futbol.executemany(insertTrofeos, valoresTrofeos)
+# mydb.commit()
 
 
-insertPatrocinadores = "INSERT INTO Patrocinadores (Id_Patrocinadores_pa, Id_Equipos_pa, Nombre_pa, Fecha_Inicio_pa, Fecha_Final_pa, Dinero_Anual_pa) VALUES (NULL, %s, %s, %s, %s, %s)"
-valoresPatrocinadores = [
-  ('1', 'Adidas', '1998', '2028', '110000000'),
-  ('1', 'Fly Emirates', '2011', '2027', '70000000'),
-  ('2', 'Nike', '1998', '2028', '105000000'),
-  ('2', 'Spotify', '2022', '2026', '60000000'),
-  ('3', 'Puma', '2019', '2029', '74000000')
-]
-futbol.executemany(insertPatrocinadores, valoresPatrocinadores)
-mydb.commit()
+# insertPatrocinadores = "INSERT INTO Patrocinadores (Id_Patrocinadores_pa, Id_Equipos_pa, Nombre_pa, Fecha_Inicio_pa, Fecha_Final_pa, Dinero_Anual_pa) VALUES (NULL, %s, %s, %s, %s, %s)"
+# valoresPatrocinadores = [
+#   ('1', 'Adidas', '1998', '2028', '110000000'),
+#   ('1', 'Fly Emirates', '2011', '2027', '70000000'),
+#   ('2', 'Nike', '1998', '2028', '105000000'),
+#   ('2', 'Spotify', '2022', '2026', '60000000'),
+#   ('3', 'Puma', '2019', '2029', '74000000')
+# ]
+# futbol.executemany(insertPatrocinadores, valoresPatrocinadores)
+# mydb.commit()
 
 #####################          CONSULTAR TABLA          ########################
 
