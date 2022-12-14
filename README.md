@@ -7,8 +7,8 @@ El repositorio es la API de una base de datos de fútbol profesional
 
 Trabajo académico [^1] :
 
-1. [BBDD de futbol](#BBDD)
-2. [API de la base de datos](#API)
+1. [Base de datos de fútbol](#BBDD)
+2. [API :computer:](#API)
 
 ---
 
