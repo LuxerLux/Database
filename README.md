@@ -8,13 +8,13 @@ El repositorio es la API de una base de datos de fútbol profesional
 
 La base de datos tendrá la siguiente información:
 
-- La información de las ==ligas== mas importantes de Europa
-- La información de los ==equipos== más importantes de cada liga
-- La información de los ==jugadores== de los equipos
-- La información de los ==trofeos== ganados por cada equipo
-- La información de los ==patrocinadores== de cada equipo
+- La información de las ***ligas*** mas importantes de Europa
+- La información de los ***equipos*** más importantes de cada liga
+- La información de los ***jugadores*** de los equipos
+- La información de los ***trofeos*** ganados por cada equipo
+- La información de los ***patrocinadores*** de cada equipo
 
-### MER de la base de datos de futbol
+###MER de la base de datos de futbol
 
 ![BBDD_Futbol MER](https://user-images.githubusercontent.com/114089760/207039841-0b5c7b4b-5825-41f2-9499-b8a7aac19a5e.jpg)
 
@@ -32,6 +32,6 @@ Esta API permite:
 - [ ] Crear usuarios
 - [ ] Borrar usuarios
 - [ ] Modificar usuarios
-
-Nota de pie que sale al final de la página. [^1]
-[^1]: Desarrollado para uso escolar en el CEV.
+ 
+Empresa [^]
+[^]: Desarrollado para uso escolar en el ***CEV***.
