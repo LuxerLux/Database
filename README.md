@@ -14,10 +14,12 @@ La base de datos tendrá la siguiente información:
 - La información de los **trofeos** ganados por cada equipo
 - La información de los **patrocinadores** de cada equipo
 
+[MER de la base de datos de futbol](BBDD_Futbol.jpg)
+
 ![BBDD_Futbol MER](https://user-images.githubusercontent.com/114089760/207039841-0b5c7b4b-5825-41f2-9499-b8a7aac19a5e.jpg)
 
 ---
-## API
+## API :computer:
 
 Esta API permite:
 
@@ -30,3 +32,5 @@ Esta API permite:
 - [ ] Crear usuarios
 - [ ] Borrar usuarios
 - [ ] Modificar usuarios
+
+[^1]: Desarrollado para uso escolar en el CEV.
