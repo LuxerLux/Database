@@ -12,7 +12,7 @@ Trabajo académico [^1] :
 
 ---
 
-## Base de datos de fútbol {#iBBDD}
+## Base de datos de fútbol {#BBDD}
 
 La base de datos tendrá la siguiente información:
 
@@ -28,7 +28,7 @@ La base de datos tendrá la siguiente información:
 
 ---
 
-## API :computer: {#API}
+## API :computer: {#BBDD}
 
 Esta API permite:
 
