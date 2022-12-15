@@ -10,23 +10,34 @@ mydb = mysql.connector.connect(
 futbol = mydb.cursor()
 
 
-#############    Se crean las tablas         ########### 
+# #############    Se crean las tablas         ########### 
 
-# futbol.execute("CREATE TABLE Liga (Id_Liga_li INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Nombre_li VARCHAR(50) NOT NULL, País_li VARCHAR(50) NOT NULL, N_Edición_li INT(4) NOT NULL, N_Jornada_li INT(2) NOT NULL)")
+# futbol.execute("CREATE TABLE Liga (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Nombre_li VARCHAR(50) NOT NULL, País_li VARCHAR(50) NOT NULL, N_Edición_li INT(4) NOT NULL, N_Jornada_li INT(2) NOT NULL)")
 
-# futbol.execute("CREATE TABLE Equipos (Id_Equipos_eq INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_eq INT NOT NULL, Nombre_eq VARCHAR(50) NOT NULL, PJ_eq INT(7) NOT NULL, Victorias_eq INT(5) NOT NULL, Derrotas_eq INT(5) NOT NULL, Empates_eq INT(5) NOT NULL, GF_eq INT(5) NOT NULL, GC_eq INT(5) NOT NULL, Puntos_eq INT(7) NOT NULL, FOREIGN KEY (Id_Liga_eq) REFERENCES Liga(Id_Liga_li))")
+# futbol.execute("CREATE TABLE Equipos (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ID_Liga_eq INT NOT NULL, Nombre_eq VARCHAR(50) NOT NULL, PJ_eq INT(7) NOT NULL, Victorias_eq INT(5) NOT NULL, Derrotas_eq INT(5) NOT NULL, Empates_eq INT(5) NOT NULL, GF_eq INT(5) NOT NULL, GC_eq INT(5) NOT NULL, Puntos_eq INT(7) NOT NULL, FOREIGN KEY (ID_Liga_eq) REFERENCES Liga (ID))")
 
-# futbol.execute("CREATE TABLE Jugadores (Id_Jugadores_ju INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_ju INT NOT NULL, Id_Equipos_ju INT NOT NULL, Nombre_ju VARCHAR(50) NOT NULL, PJ_ju INT(5) NOT NULL, Goles_ju INT(4) NOT NULL, Asistencias_ju INT(4) NOT NULL, Rojas_ju INT(3) NOT NULL, Amarillas_ju INT(3) NOT NULL, FOREIGN KEY (Id_Liga_ju) REFERENCES Liga(Id_Liga_li), FOREIGN KEY (Id_Equipos_ju) REFERENCES Equipos(Id_Equipos_eq))")
+# futbol.execute("CREATE TABLE Jugadores (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ID_Liga_ju INT NOT NULL, ID_Equipos_ju INT NOT NULL, Nombre_ju VARCHAR(50) NOT NULL, PJ_ju INT(5) NOT NULL, Goles_ju INT(4) NOT NULL, Asistencias_ju INT(4) NOT NULL, Rojas_ju INT(3) NOT NULL, Amarillas_ju INT(3) NOT NULL, FOREIGN KEY (ID_Liga_ju) REFERENCES Liga(ID), FOREIGN KEY (ID_Equipos_ju) REFERENCES Equipos (ID))")
 
-# futbol.execute("CREATE TABLE Trofeos (Id_Trofeos_tr INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_tr INT NOT NULL, Nombre_tr VARCHAR(50) NOT NULL, Tipo_tr VARCHAR(50) NOT NULL, Fecha_Inicio_tr YEAR NULL, Fecha_Final_tr YEAR NULL, G_Anterior_tr VARCHAR(50) NULL, FOREIGN KEY (Id_Equipos_tr) REFERENCES Equipos(Id_Equipos_eq))")
+# futbol.execute("CREATE TABLE Trofeos (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ID_Equipos_tr INT NOT NULL, Nombre_tr VARCHAR(50) NOT NULL, Tipo_tr VARCHAR(50) NOT NULL, Fecha_Inicio_tr YEAR NULL, Fecha_Final_tr YEAR NULL, G_Anterior_tr VARCHAR(50) NULL, FOREIGN KEY (ID_Equipos_tr) REFERENCES Equipos (ID))")
 
-# futbol.execute("CREATE TABLE Patrocinadores (Id_Patrocinadores_pa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_pa INT NOT NULL, Nombre_pa VARCHAR(50) NOT NULL, Fecha_Inicio_pa YEAR NULL, Fecha_Final_pa YEAR NULL, Dinero_Anual_pa INT(15) NOT NULL, FOREIGN KEY (Id_Equipos_pa) REFERENCES Equipos(Id_Equipos_eq))")
+# futbol.execute("CREATE TABLE Patrocinadores (ID INT NOT NULL AUTO_INCREMENT PRIMARY KEY, ID_Equipos_pa INT NOT NULL, Nombre_pa VARCHAR(50) NOT NULL, Fecha_Inicio_pa YEAR NULL, Fecha_Final_pa YEAR NULL, Dinero_Anual_pa INT(15) NOT NULL, FOREIGN KEY (ID_Equipos_pa) REFERENCES Equipos (ID))")
+
+
+# # futbol.execute("CREATE TABLE Liga (Id_Liga_li INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Nombre_li VARCHAR(50) NOT NULL, País_li VARCHAR(50) NOT NULL, N_Edición_li INT(4) NOT NULL, N_Jornada_li INT(2) NOT NULL)")
+
+# # futbol.execute("CREATE TABLE Equipos (Id_Equipos_eq INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_eq INT NOT NULL, Nombre_eq VARCHAR(50) NOT NULL, PJ_eq INT(7) NOT NULL, Victorias_eq INT(5) NOT NULL, Derrotas_eq INT(5) NOT NULL, Empates_eq INT(5) NOT NULL, GF_eq INT(5) NOT NULL, GC_eq INT(5) NOT NULL, Puntos_eq INT(7) NOT NULL, FOREIGN KEY (Id_Liga_eq) REFERENCES Liga(Id_Liga_li))")
+
+# # futbol.execute("CREATE TABLE Jugadores (Id_Jugadores_ju INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Liga_ju INT NOT NULL, Id_Equipos_ju INT NOT NULL, Nombre_ju VARCHAR(50) NOT NULL, PJ_ju INT(5) NOT NULL, Goles_ju INT(4) NOT NULL, Asistencias_ju INT(4) NOT NULL, Rojas_ju INT(3) NOT NULL, Amarillas_ju INT(3) NOT NULL, FOREIGN KEY (Id_Liga_ju) REFERENCES Liga(Id_Liga_li), FOREIGN KEY (Id_Equipos_ju) REFERENCES Equipos(Id_Equipos_eq))")
+
+# # futbol.execute("CREATE TABLE Trofeos (Id_Trofeos_tr INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_tr INT NOT NULL, Nombre_tr VARCHAR(50) NOT NULL, Tipo_tr VARCHAR(50) NOT NULL, Fecha_Inicio_tr YEAR NULL, Fecha_Final_tr YEAR NULL, G_Anterior_tr VARCHAR(50) NULL, FOREIGN KEY (Id_Equipos_tr) REFERENCES Equipos(Id_Equipos_eq))")
+
+# # futbol.execute("CREATE TABLE Patrocinadores (Id_Patrocinadores_pa INT NOT NULL AUTO_INCREMENT PRIMARY KEY, Id_Equipos_pa INT NOT NULL, Nombre_pa VARCHAR(50) NOT NULL, Fecha_Inicio_pa YEAR NULL, Fecha_Final_pa YEAR NULL, Dinero_Anual_pa INT(15) NOT NULL, FOREIGN KEY (Id_Equipos_pa) REFERENCES Equipos(Id_Equipos_eq))")
 
 
 
 # ###########    Se insertan los valores       ##################
 
-# insertLiga = "INSERT INTO Liga (Id_Liga_li, Nombre_li, País_li, N_Edición_li, N_Jornada_li) VALUES (NULL, %s, %s, %s, %s)" ###En VALUES el id primary key se pone null para que sea autoincrement
+# insertLiga = "INSERT INTO Liga (ID, Nombre_li, País_li, N_Edición_li, N_Jornada_li) VALUES (NULL, %s, %s, %s, %s)" ###En VALUES el id primary key se pone null para que sea autoincrement
 # valoresLiga = [
 #   ('LaLiga', 'España', '92', '14'),
 #   ('Premier League', 'Reino Unido', '124', '16'),
@@ -36,7 +47,7 @@ futbol = mydb.cursor()
 # mydb.commit()
 
 
-# insertEquipos = "INSERT INTO Equipos (Id_Equipos_eq, Id_Liga_eq, Nombre_eq, PJ_eq, Victorias_eq, Derrotas_eq, Empates_eq, GF_eq, GC_eq, Puntos_eq) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+# insertEquipos = "INSERT INTO Equipos (ID, Id_Liga_eq, Nombre_eq, PJ_eq, Victorias_eq, Derrotas_eq, Empates_eq, GF_eq, GC_eq, Puntos_eq) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 # valoresEquipos = [
 #   ('1', 'Real Madrid CF', '14', '11', '1', '2', '33', '14', '35'),
 #   ('1', 'FC.Barcelona', '14', '12', '1', '1', '33', '5', '37'),
@@ -48,7 +59,7 @@ futbol = mydb.cursor()
 # mydb.commit()
 
 
-# insertJugadores = "INSERT INTO Jugadores (Id_Jugadores_ju, Id_Liga_ju, Id_Equipos_ju, Nombre_ju, PJ_ju, Goles_ju, Asistencias_ju, Rojas_ju, Amarillas_ju) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)"
+# insertJugadores = "INSERT INTO Jugadores (ID, Id_Liga_ju, Id_Equipos_ju, Nombre_ju, PJ_ju, Goles_ju, Asistencias_ju, Rojas_ju, Amarillas_ju) VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s)"
 # valoresJugadores = [
 #   ('1', '1', 'Karim Benzema', '7', '5', '1', '0', '0'),
 #   ('1', '2', 'Pedro González (Pedri)', '14', '3', '0', '0', '0'),
@@ -60,7 +71,7 @@ futbol = mydb.cursor()
 # mydb.commit()
 
 
-# insertTrofeos = "INSERT INTO Trofeos (Id_Trofeos_tr, Id_Equipos_tr, Nombre_tr, Tipo_tr, Fecha_Inicio_tr, Fecha_Final_tr, G_Anterior_tr) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
+# insertTrofeos = "INSERT INTO Trofeos (ID, Id_Equipos_tr, Nombre_tr, Tipo_tr, Fecha_Inicio_tr, Fecha_Final_tr, G_Anterior_tr) VALUES (NULL, %s, %s, %s, %s, %s, %s)"
 # valoresTrofeos = [
 #   ('1', 'Champions League', 'Internacional', '2021', '2022', 'Chelsea'),
 #   ('5', 'Europa League', 'Internacional', '2021', '2022', 'Villareal'),
@@ -72,7 +83,7 @@ futbol = mydb.cursor()
 # mydb.commit()
 
 
-# insertPatrocinadores = "INSERT INTO Patrocinadores (Id_Patrocinadores_pa, Id_Equipos_pa, Nombre_pa, Fecha_Inicio_pa, Fecha_Final_pa, Dinero_Anual_pa) VALUES (NULL, %s, %s, %s, %s, %s)"
+# insertPatrocinadores = "INSERT INTO Patrocinadores (ID, Id_Equipos_pa, Nombre_pa, Fecha_Inicio_pa, Fecha_Final_pa, Dinero_Anual_pa) VALUES (NULL, %s, %s, %s, %s, %s)"
 # valoresPatrocinadores = [
 #   ('1', 'Adidas', '1998', '2028', '110000000'),
 #   ('1', 'Fly Emirates', '2011', '2027', '70000000'),
@@ -85,7 +96,7 @@ futbol = mydb.cursor()
 
 
 
-#####################          VER TABLAS BASE DE DATOS         ########################
+######################          VER TABLAS BASE DE DATOS         ########################
 
 def ver_tablas():
     futbol = mydb.cursor()
@@ -248,50 +259,59 @@ def insertar_Patrocinadores(Id_Equipos_pa, Nombre_pa, Fecha_Inicio_pa, Fecha_Fin
 
 ########################    ELIMINAR   ###########################
 
-def elimina_Liga(Id_Liga_li):
+def eliminar_DatoTabla(tabla,numId):
     futbol = mydb.cursor()
-    eliminarLiga='''DELETE FROM Liga WHERE Id_Liga_li = {}'''.format(Id_Liga_li)
-    futbol.execute(eliminarLiga)
-    n =futbol.rowcount
+    eliminarDato='''DELETE FROM {} WHERE ID = {}'''.format(tabla,numId)
+    futbol.execute(eliminarDato)
+    n = futbol.rowcount
     mydb.commit()
     futbol.close()
     return n
 
-def elimina_Equipos(Id_Equipos_eq):
-    futbol = mydb.cursor()
-    eliminarEquipos='''DELETE FROM Equipos WHERE Id_Equipos_eq = {}'''.format(Id_Equipos_eq)
-    futbol.execute(eliminarEquipos)
-    n =futbol.rowcount
-    mydb.commit()
-    futbol.close()
-    return n
+# def elimina_Liga(Id_Liga_li):
+#     futbol = mydb.cursor()
+#     eliminarLiga='''DELETE FROM Liga WHERE Id_Liga_li = {}'''.format(Id_Liga_li)
+#     futbol.execute(eliminarLiga)
+#     n =futbol.rowcount
+#     mydb.commit()
+#     futbol.close()
+#     return n
 
-def elimina_Jugadores(Id_Jugadores_ju):
-    futbol = mydb.cursor()
-    eliminarJugadores='''DELETE FROM Jugadores WHERE Id_Jugadores_ju = {}'''.format(Id_Jugadores_ju)
-    futbol.execute(eliminarJugadores)
-    n =futbol.rowcount
-    mydb.commit()
-    futbol.close()
-    return n
+# def elimina_Equipos(Id_Equipos_eq):
+#     futbol = mydb.cursor()
+#     eliminarEquipos='''DELETE FROM Equipos WHERE Id_Equipos_eq = {}'''.format(Id_Equipos_eq)
+#     futbol.execute(eliminarEquipos)
+#     n =futbol.rowcount
+#     mydb.commit()
+#     futbol.close()
+#     return n
 
-def elimina_Trofeos(Id_Trofeos_tr):
-    futbol = mydb.cursor()
-    eliminarTrofeos='''DELETE FROM Trofeos WHERE Id_Trofeos_tr = {}'''.format(Id_Trofeos_tr)
-    futbol.execute(eliminarTrofeos)
-    n =futbol.rowcount
-    mydb.commit()
-    futbol.close()
-    return n
+# def elimina_Jugadores(Id_Jugadores_ju):
+#     futbol = mydb.cursor()
+#     eliminarJugadores='''DELETE FROM Jugadores WHERE Id_Jugadores_ju = {}'''.format(Id_Jugadores_ju)
+#     futbol.execute(eliminarJugadores)
+#     n =futbol.rowcount
+#     mydb.commit()
+#     futbol.close()
+#     return n
 
-def elimina_Patrocinadores(Id_Patrocinadores_pa):
-    futbol = mydb.cursor()
-    eliminarPatrocinadores='''DELETE FROM Patrocinadores WHERE Id_Patrocinadores_pa = {}'''.format(Id_Patrocinadores_pa)
-    futbol.execute(eliminarPatrocinadores)
-    n =futbol.rowcount
-    mydb.commit()
-    futbol.close()
-    return n
+# def elimina_Trofeos(Id_Trofeos_tr):
+#     futbol = mydb.cursor()
+#     eliminarTrofeos='''DELETE FROM Trofeos WHERE Id_Trofeos_tr = {}'''.format(Id_Trofeos_tr)
+#     futbol.execute(eliminarTrofeos)
+#     n =futbol.rowcount
+#     mydb.commit()
+#     futbol.close()
+#     return n
+
+# def elimina_Patrocinadores(Id_Patrocinadores_pa):
+#     futbol = mydb.cursor()
+#     eliminarPatrocinadores='''DELETE FROM Patrocinadores WHERE Id_Patrocinadores_pa = {}'''.format(Id_Patrocinadores_pa)
+#     futbol.execute(eliminarPatrocinadores)
+#     n =futbol.rowcount
+#     mydb.commit()
+#     futbol.close()
+#     return n
 
 ########################       MODIFICAR      ###########################
 
@@ -415,14 +435,16 @@ def main():
 
         ###Consultar tablas
         elif opcion == '2':
-            # print("\nConsultar tabla")
-            # print(menuTabla)
-            # subopcionConsulta = input("\n¿Que tabla deseas consultar?").lower()
-            # if subopcionConsulta == '1':
             print("\nTablas de la base de datos\n")
             ver_tablas()
             tabla = input("\nNombre de la tabla: \n")
             consulta_tabla(tabla)
+
+
+            # print("\nConsultar tabla")
+            # print(menuTabla)
+            # subopcionConsulta = input("\n¿Que tabla deseas consultar?").lower()
+            # if subopcionConsulta == '1':
             # elif subopcionConsulta == '2':
             #     print("\nConsultar Equipos")
             #     consulta_equipos()
@@ -530,8 +552,15 @@ def main():
         ###Eliminar datos
         elif opcion == '4':
             print("\nEliminar datos")
-            print(menuTabla)
-            subopcionEliminar = input("\n¿En que tabla está el dato deseas eliminar?").upper()
+            ver_tablas()
+            tabla = str(input("\nIntroduce el nombre de la tabla: \n"))
+            consulta_tabla(tabla)
+            numId = int(input("\nIntroduce el numero del id: \n"))
+            r = eliminar_DatoTabla(tabla,numId)
+            if(r==0):
+                print("\n-> No existe")
+            else:
+                print("\n-> Se eliminó correctamente")
         #     if subopcionEliminar == '1':
         #         print("\nEliminar datos Liga")
         #         consulta_liga()
