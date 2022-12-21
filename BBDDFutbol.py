@@ -3,8 +3,8 @@ import mysql.connector
 mydb = mysql.connector.connect(
     host="containers-us-west-102.railway.app",
     user="root",
-    port="7554",
-    password="kGtpX93qBS6JXrnk8zp6",
+    port="####",
+    password="###########",
     database="railway"
 )
 futbol = mydb.cursor()
