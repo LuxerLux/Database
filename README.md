@@ -40,9 +40,11 @@ Esta API permite:
 - [x] Modificar datos en la tabla seleccionada
 - [x] Crear tablas
 - [x] Borrar tablas
-- [ ] Crear usuarios
-- [ ] Borrar usuarios
-- [ ] Modificar usuarios
- 
+- [x] Crear usuarios
+- [x] Borrar usuarios
+- [x] Modificar usuarios
+- [x] Crear rol
+- [x] Borrar rol
+- [x] Modificar rol
 
 [^1]: Desarrollado para uso escolar en el ***CEV***
